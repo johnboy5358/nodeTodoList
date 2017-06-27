@@ -1,11 +1,11 @@
+const todoController = require('./controllers/todoController')
 const express = require('express')
-const todoController = require('controllers/todoController')
-
 
 const app = express()
 
+
 // set pug as view engine
-app.set('view-engine', 'pug')
+app.set('view engine', 'pug')
 // serve static files from the public dir.
 app.use(express.static('public'))
 

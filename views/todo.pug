@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    //- include includes/headContent.pug
+    link(href="assets/style/style.css" rel="stylesheet" type="text/css")
+    title todo App
+  body(id="todo")
+    //- include includes/nav.pug
+    div(id="todo-table" class="v-centre h-centre")
+      h1(id="heading1") todo
+        span(class="entries")= todos.length
+
+      form(method="POST" action="/todo")
+        p(id="user-ctrl")
+          input(type="text" name="item" placeholder="Add new item..." required)
+          button(type="submit") +
+      ul(id="items-list" class="h-centre")
+        each todo, index in todos
+          li
+            span(class="id" hidden)= index
+            span= todo.item
+            button(class="delete" style="display:none") Delete
+
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js"
+           integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+           crossorigin="anonymous")
+    script(src="assets/scripts/script.js")
