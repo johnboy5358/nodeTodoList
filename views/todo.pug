@@ -11,9 +11,10 @@ html
         span(class="entries")= todos.length
 
       form(method="POST" action="/todo")
-        p(id="user-ctrl")
+        p
           input(type="text" name="item" placeholder="Add new item..." required)
-          button(type="submit") +
+          button(class="submit" type="submit") +
+
       ul(id="items-list" class="h-centre")
         each todo, index in todos
           li

@@ -9,26 +9,32 @@ body{
   min-height: 99vh;
   background: #1c3253;
   font-family: tahoma;
-  color: #989898;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+body, input[type=text] {
+  color: #989898;
+}
 
 #todo-table{
   position: relative;
-  width: 70%;
   min-height: 30vh;
   background: #090d13;
   margin: 0 auto;
   padding: 20px;
-  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+#todo-table, input[type=text] {
+  width: 70%;
+
 }
 
 #heading1 {
   position: relative;
   color: darkblue;
-  border: solid 1px cornflowerblue;
+  border: solid 1px #d0d5ff;
   background-color: cornflowerblue;
   text-align: center;
 }
@@ -39,6 +45,7 @@ body{
   padding: .25rem;
 }
 
+/* form components */
 #todo-table form {
   width: 100%;
 }
@@ -50,41 +57,33 @@ body{
   clear: both;
 }
 
-#user-ctrl {
-  width: 100%
-}
-
 input[type=text]{
-  width: 70%;
   padding: 20px;
   background:#181c22;
   border: 0;
   float: left;
   font-size: 20px;
-  color: #989898;
 }
 
 button{
   padding: 20px;
   width: 30%;
-  float: left;
   background: #23282e;
   border: 0;
-  box-sizing: border-box;
   color: #fff;
   cursor: pointer;
   font-size: 20px;
-  text-shadow: 1px 1px #000, 2px 2px #000, 3px 3px #000;
 }
 
-li button {
-  background-color: #b22c1e;
+button.submit {
+  padding: 8px;
+  font-size: 40px;
 }
+
+/* end form components */
 
 ul{
   list-style-type: none;
-  padding: 0;
-  margin: 0;
 }
 
 li{
@@ -98,19 +97,24 @@ li{
   position: relative;
 }
 
-li button {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  display: inline;
-}
-
 li:hover {
   border: solid 1px cornflowerblue;
+  color: lightskyblue;
+  background: #181c22;
   height: 4.2rem;
 }
 
 li:hover > li span{
   width: 70%;
   text-overflow: clip;
+}
+
+button.delete {
+  /*display: inline;*/
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: #b22c1e;
+  border: solid 1px black;
+  text-shadow: 1px 1px #000, 2px 2px #000, 3px 3px #000;
 }
