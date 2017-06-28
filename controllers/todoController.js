@@ -1,6 +1,24 @@
 const bodyParser = require('body-parser')
-
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
+console.log('Now get mongoose...')
+const mongoose = require('mongoose ')
+mongoose.connect('mongodb://johnswindin:Kaanapal1@ds141232.mlab.com:41232/todo')
+// Create mongoDb schema
+const todoSchema = new mongoose.Schema({
+  item: String
+})
+
+// Create Model
+const Todo = mongoose.model('Todo', todoSchema)
+
+// test code...
+const itemOne = Todo({item: 'Go cycling.'}).save(err => {
+  if (err) throw err
+  console.log('item saved')
+})
+// end test code...
+
+
 let todos = []
 
 module.exports = function (app) {
