@@ -1,7 +1,7 @@
+const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
-console.log('Now get mongoose...')
-const mongoose = require('mongoose ')
+
 mongoose.connect('mongodb://johnswindin:Kaanapal1@ds141232.mlab.com:41232/todo')
 // Create mongoDb schema
 const todoSchema = new mongoose.Schema({
